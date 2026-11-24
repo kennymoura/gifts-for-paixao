@@ -86,7 +86,7 @@ function detail(i){
  $.innerHTML=`<a class="back" href="#">← All gifts</a><article class="card"><div class="photo"><img alt="${i.name}" src="${i.img}"></div><div class="info"><p class="brand">${i.brand}</p><h2>${i.name}</h2><p class="desc">${i.desc}</p><div class="row"><span class="label">Price</span><span class="price">${i.price}</span></div><div class="row"><span class="label">Colour</span><span>${i.colour}</span></div><div class="row"><span class="label">How much I want it</span><span class="hearts" aria-label="${i.want} out of 5">${hearts(i.want)}</span></div><div class="row"><span class="label">Perfect for</span><span>${i.when}</span></div><a class="btn" href="${i.url}" target="_blank" rel="noopener">Buy this gift</a></div></article>`;
 }
 function route(){
- const id=location.hash.slice(1);
+ const id=location.hash.slice(2);
  const i=ITEMS.find(x=>x.id===id);
  i?detail(i):grid();
  window.scrollTo(0,0);
