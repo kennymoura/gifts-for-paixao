@@ -51,30 +51,9 @@ const IMG="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4RMsRXhpZgAATU0AKg
 const ITEMS=[
 {id:"mac-lustreglass-lip-tint",brand:"MAC Cosmetics",name:"Lustreglass Stainglass Lip Tint",img:IMG,
  desc:"A glossy lip tint in a deep rust-red shade.",price:"€17.77",colour: "Posh Pit",want:3,when:"A relationship anniversary",
- url:"https://www.notino.pt/mac-cosmetics/lustreglass-stainglass-lip-tint-cor-para-labios/p-16386478/?cjdata=MXxZfDB8WXww&utm_source=cj&utm_medium=affiliate&utm_campaign=5115940&utm_term=101521229&cjevent=fe1946f6e81d11f18112097a0a1981e1"}
-];
-const $=document.getElementById("app");
-const hearts=n=>"♥".repeat(n)+'<span class="off">'+"♥".repeat(5-n)+"</span>";
-function grid(){
- $.innerHTML='<div class="grid">'+ITEMS.map(i=>`<a class="tile" href="#${i.id}"><div class="photo"><img alt="${i.name}" src="${i.img}"></div><div class="t"><p class="brand">${i.brand}</p><h2>${i.name}</h2><div class="meta"><span class="price">${i.price}</span><span class="hearts" aria-label="${i.want} out of 5">${hearts(i.want)}</span></div></div></a>`).join("")+"</div>";
-}
-function detail(i){
- $.innerHTML=`<a class="back" href="#">← All gifts</a><article class="card"><div class="photo"><img alt="${i.name}" src="${i.img}"></div><div class="info"><p class="brand">${i.brand}</p><h2>${i.name}</h2><p class="desc">${i.desc}</p><div class="row"><span class="label">Price</span><span class="price">${i.price}</span></div><div class="row"><span class="label">Colour</span><span>${i.colour}</span></div><div class="row"><span class="label">How much I want it</span><span class="hearts" aria-label="${i.want} out of 5">${hearts(i.want)}</span></div><div class="row"><span class="label">Perfect for</span><span>${i.when}</span></div><a class="btn" href="${i.url}" target="_blank" rel="noopener">Buy this gift</a></div></article>`;
-}
-function route(){
- const id=location.hash.slice(1);
- const i=ITEMS.find(x=>x.id===id);
- i?detail(i):grid();
- window.scrollTo(0,0);
-}
-window.addEventListener("hashchange",route);route(); 
-</script>
-<main id="app"></main> 
-<script>
-const IMG="https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/B/BENEFIT_COSMETICS/764532/370068-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit"
-const ITEMS=[
-{id:"benefit-benetint",brand:"Benefit Cosmetics",name:"Benetint – Tinted lip & cheek stain",img:IMG,
- desc:"The iconic liquid blush for lips and cheeks in an intense cherry red tone.",price:"€28.00",colour: "Dark Cherry",want:3,when:"A relationship anniversary",
+ url:"https://www.notino.pt/mac-cosmetics/lustreglass-stainglass-lip-tint-cor-para-labios/p-16386478/?cjdata=MXxZfDB8WXww&utm_source=cj&utm_medium=affiliate&utm_campaign=5115940&utm_term=101521229&cjevent=fe1946f6e81d11f18112097a0a1981e1"},
+{id:"benefit-benetint",brand:"Benefit Cosmetics",name:"Benetint – Tinted lip & cheek stain",img:"https://media.sephora.eu/content/dam/gdam/europe/digital/pim/published/B/BENEFIT_COSMETICS/764532/370068-media_swatch.jpeg?scaleWidth=750&scaleHeight=750&scaleMode=fit",
+ desc:"The iconic liquid blush for lips and cheeks in an intense cherry red tone.",price:"€28.00",colour:"Dark Cherry",want:3,when:"A relationship anniversary",
  url:"https://www.sephora.pt/p/benetint---blush-liquido-tamanho-de-viagem-483352.html?utm_source=690349&utm_medium=affiliation&utm_campaign=awin&utm_term=531573&sv1=affiliate&sv_campaign_id=531573&awc=27940_1795550610_01fad9eaed6df267cafb7d98d996a736"}
 ];
 const $=document.getElementById("app");
@@ -86,7 +65,7 @@ function detail(i){
  $.innerHTML=`<a class="back" href="#">← All gifts</a><article class="card"><div class="photo"><img alt="${i.name}" src="${i.img}"></div><div class="info"><p class="brand">${i.brand}</p><h2>${i.name}</h2><p class="desc">${i.desc}</p><div class="row"><span class="label">Price</span><span class="price">${i.price}</span></div><div class="row"><span class="label">Colour</span><span>${i.colour}</span></div><div class="row"><span class="label">How much I want it</span><span class="hearts" aria-label="${i.want} out of 5">${hearts(i.want)}</span></div><div class="row"><span class="label">Perfect for</span><span>${i.when}</span></div><a class="btn" href="${i.url}" target="_blank" rel="noopener">Buy this gift</a></div></article>`;
 }
 function route(){
- const id=location.hash.slice(2);
+ const id=location.hash.slice(1);
  const i=ITEMS.find(x=>x.id===id);
  i?detail(i):grid();
  window.scrollTo(0,0);
